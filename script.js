@@ -16,14 +16,14 @@ var labdaY = 0;
 uto1.style.left = "40px";
 uto2.style.left = "750px";
 
-document,addEventListener("keydown", function(event){
+document.addEventListener("keydown", function(event){
     if(event.key == "s") uto1legomb = true;
     if(event.key == "w") uto1felgomb = true;
     if(event.key == "ArrowDown") uto2legomb = true;
     if(event.key == "ArrowUp") uto2felgomb = true;
 });
 
-document,addEventListener("keyup", function(event){
+document.addEventListener("keyup", function(event){
     if(event.key == "s") uto1legomb = false;
     if(event.key == "w") uto1felgomb = false;
     if(event.key == "ArrowDown") uto2legomb = false;
@@ -57,3 +57,6 @@ function startLabda(){
     labdaXSeb = (Math.random()*3+2) * (Math.round(Math.random()) * 2 - 1);
     labdaYSeb = (Math.random()*3+2) * (Math.round(Math.random()) * 2 - 1);
 }
+
+startLabda();
+loop();
