@@ -1,0 +1,7 @@
+body{margin:0;}
+.fullpalya{ background: darkgreen; width: 800px; height: 600px; position: absolute; }
+.palya{ background: green; width: 700px; height: 600px; position: absolute; left: 50px; }
+.uto    { background: white; width: 10px; height: 100px; position: absolute; }
+.labda  { background: white; width: 10px; height: 10px; position: absolute; }
+
+
