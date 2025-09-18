@@ -30,9 +30,6 @@ document.addEventListener("keyup", function(event){
     if(event.key == "ArrowUp") uto2felgomb = false;
 }); 
 
-if (labdaY < 0 || labdaY > 600) {labdaYSeb = -labdaYSeb};
-if (labdaX < -50) {startLabda();}
-if (labdaX > 750) {startLabda();}
 
 
 function loop(){
@@ -44,7 +41,27 @@ function loop(){
     labdaX += labdaXSeb;
     labdaY += labdaYSeb;    
 
-    uto1.style.top = utoY-50 + "px";
+    // Ball collision with top and bottom
+    if (labdaY < 0 || labdaY > 600) {
+        labdaYSeb = -labdaYSeb;
+    }
+    
+    // Ball collision with paddles
+    // Left paddle (uto1)
+    if (labdaX < 10 && labdaY >= uto1Y - 50 && labdaY <= uto1Y + 50) {
+        labdaXSeb = Math.abs(labdaXSeb); // Force ball to move right
+    }   
+    // Right paddle (uto2)
+    if (labdaX > 700 && labdaY >= uto2Y - 50 && labdaY <= uto2Y + 50) {
+        labdaXSeb = -Math.abs(labdaXSeb); // Force ball to move left
+    }
+    
+    // Ball collision with sides (scoring)
+    if (labdaX < 0 || labdaX > 750) {
+        startLabda();
+    }
+
+    uto1.style.top = uto1Y-50 + "px";
     uto2.style.top = uto2Y-50 + "px";
     labda.style.left = labdaX - 5 + 50 + "px";
     labda.style.top = labdaY - 5 + "px";
